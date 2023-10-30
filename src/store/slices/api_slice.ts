@@ -1,37 +1,48 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { requestApi } from "../../services/global_api";
+import { GET_TRENDING_VIDEOS } from "../../services/endpoints";
 
-/* export const getGenreList = createAsyncThunk(
-  "fetch/genres",
-  async (apiEndPoint: string) => {
-    const res = await requestApi.get();
-    return res.data.results;
-  }
-); */
+export const getTrendingVideos = createAsyncThunk("fetch/genres", async () => {
+  const res = await requestApi.get(
+    `${GET_TRENDING_VIDEOS}?api_key=${import.meta.env.VITE_API_KEY}`
+  );
 
-export type Genres = {
-  id: number;
-  name: string;
-  slug: string;
-  games_count?: number;
-  image_background: string;
-  released?: string;
-  background_image?: string;
-  metacritic?: number;
-  rating?: number;
-  reviews_count?: number;
-  suggestions_count?: number;
+  return res.data.results;
+});
+
+type TrendingVideosType = {
+  backdrop_path: string;
+  id?: number;
 };
 
-// export type GenresApi = {};
+type ApiType = {
+  loading: boolean;
+  trendingVideos: TrendingVideosType[];
+  error?: string;
+};
 
-const initialState = {};
+const initialState: ApiType = {
+  loading: false,
+  trendingVideos: [],
+  error: "",
+};
 
 export const apiSlice = createSlice({
   name: "api",
   initialState,
   reducers: {},
 
-  extraReducers: () => {},
+  extraReducers: (builder) => {
+    builder.addCase(getTrendingVideos.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(getTrendingVideos.fulfilled, (state, action) => {
+      state.trendingVideos = action.payload;
+    });
+    builder.addCase(getTrendingVideos.rejected, (state, action) => {
+      state.error = action.error.message;
+    });
+  },
 });
 // export const {  } = apiSlice.actions;
 export default apiSlice.reducer;
