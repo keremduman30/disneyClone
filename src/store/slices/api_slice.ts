@@ -33,6 +33,8 @@ type TrendingVideosType = {
 export type GenresByIdType = {
   id: number;
   poster_path: string;
+  backdrop_path?: string;
+  title?: string;
 };
 
 type ApiType = {
