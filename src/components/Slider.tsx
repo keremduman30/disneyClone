@@ -7,7 +7,7 @@ import { HiChevronLeft } from "react-icons/hi2";
 import { HiChevronRight } from "react-icons/hi";
 
 const Slider = () => {
-  const { loading, trendingVideos } = useSelector(
+  const {  trendingVideos } = useSelector(
     (store: RootState) => store.api
   );
 
