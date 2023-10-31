@@ -7,9 +7,7 @@ import { HiChevronLeft } from "react-icons/hi2";
 import { HiChevronRight } from "react-icons/hi";
 
 const Slider = () => {
-  const {  trendingVideos } = useSelector(
-    (store: RootState) => store.api
-  );
+  const { trendingVideos } = useSelector((store: RootState) => store.api);
 
   const dispatch = useAppDispatch();
   useEffect(() => {
@@ -34,7 +32,7 @@ const Slider = () => {
         className="hidden md:block absolute right-0 mx-8  mt-[150px] cursor-pointer   text-white text-4xl"
       />
       <div
-        className=" flex overflow-x-auto w-full px-16 py-4 scrollbar-hide"
+        className=" flex overflow-x-auto w-full px-16 py-4 scrollbar-hide scroll-smooth"
         ref={elementRef}
       >
         {trendingVideos.map((e) => (
