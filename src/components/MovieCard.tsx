@@ -1,7 +1,7 @@
 import { IMAGE_BASE_URL } from "../services/endpoints";
 import { GenresByIdType } from "../store/slices/api_slice";
 
-type MovieCardType = {
+export type MovieCardType = {
   item: GenresByIdType;
 };
 
