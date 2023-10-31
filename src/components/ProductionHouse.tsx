@@ -4,7 +4,7 @@ const ProductionHouse = () => {
   const productHouse = productionHouseList;
 
   return (
-    <div className=" flex gap-2  md:gap-5 p-2 px-5 md:px-16 ">
+    <div className="relative flex gap-5  md:gap-8 p-2 px-5 md:px-16">
       {productHouse.map((e) => (
         <div
           key={e.id}
@@ -17,8 +17,8 @@ const ProductionHouse = () => {
             loop
             playsInline
             className="absolute top-0 rounded-md  z-0 opacity-0 hover:opacity-50 "
-          ></video>
-          <img src={e.image} className=" w-full z-10 " alt="" />
+          />
+          <img src={e.image} className="w-full z-[1] opacity-100 " alt="" />
         </div>
       ))}
     </div>
