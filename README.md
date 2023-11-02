@@ -1,27 +1,26 @@
-# React + TypeScript + Vite
+# Disney Plus Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Disney Plus Clone, Disney Plus platformunun benzer bir klonunu içerir. Kullanıcılar, birçok Disney filmi ve dizisine erişebilir. Bu proje, React, TypeScript, Redux Toolkit ve diğer teknolojileri kullanarak oluşturulmuştur
 
-Currently, two official plugins are available:
+## Ekran Görüntüleri
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Ekran Görüntüsü 1](/src/assets/Images/disney1.png)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Teknolojiler
+- React (v18)
+- TypeScript
+- Redux Toolkit
+- Tailwind CSS
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Kurulum
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Projeyi yerel bir ortamda çalıştırmak için https://api.themoviedb.org sitesine kayıt olup api key alınmalı
+
+```bash
+# Gerekli bağımlılıkları yükleyin
+npm install
+
+# Projeyi başlatın
+npm run dev
